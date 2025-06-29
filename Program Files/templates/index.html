@@ -1,1 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Municipal Waste Classification</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body, html {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1523293915678-d126868e96f1?w=800') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 60px;
+      border-radius: 15px;
+    }
+    .navbar {
+      background-color: black !important;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+    .btn-custom {
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+      border-radius: 50px;
+      padding: 10px 30px;
+      transition: all 0.3s ease;
+    }
+    .btn-custom:hover {
+      background: white;
+      color: black;
+    }
+    section {
+      padding: 80px 0;
+    }
+    .about-badge, .contact-badge {
+      background: #fce4ec;
+      color: #c2185b;
+      padding: 6px 20px;
+      border-radius: 20px;
+      display: inline-block;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .form-control, textarea {
+      border-radius: 0;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">MUNICIPAL WASTE CLASSIFICATION</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#predict">Predict</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="overlay">
+    <h1 class="display-5 fw-bold">Welcome to <span class="text-warning">Municipal Waste Classification</span></h1>
+    <p class="lead mt-3">Upload images of waste materials, and our ML model will classify them into appropriate categories. Proper classification helps improve recycling and sustainability.</p>
+    <a href="#predict" class="btn btn-custom mt-4">GET STARTED</a>
+  </div>
+</header>
+
+<section id="predict" class="bg-light text-center">
+  <div class="container">
+    <h2 class="mb-4">Upload Waste Image for Classification</h2>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+      <div class="mb-3 text-start">
+        <label for="fileInput" class="form-label fw-bold">Upload your image:</label>
+        <input class="form-control" type="file" name="file" id="fileInput" required>
+      </div>
+      <button class="btn btn-primary" type="submit">Upload and Predict</button>
+    </form>
+
+    <img id="imagePreview" class="img-thumbnail mt-3" alt="Image Preview" style="display:none; max-width:300px;">
+    <div id="predictionResult" class="alert alert-info mt-3" style="display:none;"></div>
+  </div>
+</section>
+
+<section id="about" class="text-center">
+  <div class="container">
+    <span class="about-badge">ABOUT</span>
+    <h2 class="fw-bold">Learn More <span class="text-danger">About Us</span></h2>
+    <p class="mt-3 mb-5">GreenGuard Insights is dedicated to improving municipal waste management efficiency and sustainability.</p>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Our team includes scientists, technologists, and environmentalists using advanced classification to ensure effective waste sorting.</p>
+        <ul class="text-start mx-auto" style="max-width: 500px;">
+          <li>✔ Comprehensive classification by type and recyclability.</li>
+          <li>✔ Monitoring for efficient recycling and disposal.</li>
+          <li>✔ Tech that minimizes landfill by early separation.</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <p>We blend environmental science, AI, and public service to solve real-world waste issues with innovative tools and data-driven systems.</p>
+        <a href="#contact" class="btn btn-outline-danger mt-3">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="text-center">
+  <div class="container">
+    <span class="contact-badge">CONTACT</span>
+    <h2 class="fw-bold">Contact <span class="text-danger">Us</span></h2>
+    <p class="mt-3 mb-5">We’re here to help build a sustainable future through better waste classification.</p>
+    <div class="row text-start">
+      <div class="col-md-6">
+        <p><strong>Location:</strong> Tirupati</p>
+        <p><strong>Email:</strong> nandhiniprabhu2005@gmail.com</p>
+        <p><strong>Phone:</strong> +91 6303799761</p>
+      </div>
+      <div class="col-md-6">
+        <form>
+          <input class="form-control mb-3" type="text" placeholder="Your Name" required>
+          <input class="form-control mb-3" type="email" placeholder="Your Email" required>
+          <textarea class="form-control mb-3" rows="5" placeholder="Message" required></textarea>
+          <button class="btn btn-danger px-5 rounded-pill" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="text-center py-4 bg-dark text-white">
+  &copy; 2025 Municipal Waste Classification | Built to be safe environment by Nandini
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
+  document.getElementById('fileInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const img = document.getElementById('imagePreview');
+        img.src = event.target.result;
+        img.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  document.getElementById("uploadForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData();
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+    const resultBox = document.getElementById('predictionResult');
+
+    if (!file) {
+      alert("Please select a file.");
+      return;
+    }
+
+    formData.append("file", file);
+
+    fetch("/predict", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      resultBox.style.display = 'block';
+      resultBox.innerHTML = `<strong>Prediction:</strong> ${data.prediction}<br>
+        <img src="${data.image_path}" class="img-fluid rounded shadow mt-3" style="max-width:300px;">`;
+    })
+    .catch(error => {
+      resultBox.style.display = 'block';
+      resultBox.innerHTML = "Something went wrong. Please try again.";
+    });
+  });
+</script>
+
+</body>
+</html>
 
